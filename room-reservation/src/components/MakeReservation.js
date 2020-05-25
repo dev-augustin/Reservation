@@ -55,12 +55,15 @@ postAPI = async (formData) =>{
            
             );
             console.log(response.data);
-            // this.setState({reserve: response.data, isLoading: false})
+            this.setState({reserve: response.data, isLoading: false}) 
+            this.props.history.push('/manageReservation/');
         }
 
     catch(e){
             console.log("Error", e)
         }
+
+       // this.props.history.push('/manageReservation/');
     }
    render(){
     // const {reserve} = this.state;
