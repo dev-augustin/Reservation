@@ -25,10 +25,12 @@ export default class ManageReservation extends Component {
         }
     }
    render(){
-    const {reserve} = this.state;
+    const {reserve} = this.state; 
        return(
         <div>
-            {this.state.reserve}
+            {this.state.reserve.map((res) => <ul><li>{res.firstName}</li>
+            <li>{res.lastName} </li><Button>Edit</Button><Button>Delete</Button></ul>)}
+
         </div>
        );   
    }
