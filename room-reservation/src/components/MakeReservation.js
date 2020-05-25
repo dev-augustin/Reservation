@@ -1,0 +1,35 @@
+import React, { Component } from 'react';
+import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import axios from 'axios'
+
+
+export default class MakeReservation extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {reserve: [], isLoading: true};
+    //this.remove = this.remove.bind(this);
+  }
+
+  async componentDidMount() {
+ 
+    try{
+            const response = await axios.POST("/rosy_api/v1/reserve");
+            console.log(response.data);
+            this.setState({reserve: response.data, isLoading: false})
+        }
+
+    catch(e){
+            console.log("Error", e)
+        }
+    }
+   render(){
+    const {reserve} = this.state;
+       return(
+        <div>
+            {this.state.reserve}
+        </div>
+       );   
+   }
+}
