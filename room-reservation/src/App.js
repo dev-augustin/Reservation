@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Home from './components/Home'
+import MakeReservation from './components/MakeReservation'
+import ManageReservation from './components/ManageReservation'
+import Reviews from './components/Reviews'
+import Rooms from './components/Rooms'
+import Amenities from './components/Amenities'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+         <div className="App">
+            <Navigation />
+            <Switch>
+              <Route exact path = '/' component={Home} />
+              <Route exact path = '/makeReservation' component={MakeReservation} />
+              <Route exact path = '/manageReservation' component={ManageReservation} />
+              <Route exact path = '/amenities' component={Amenities} />
+              <Route exact path = '/reviews' component={Reviews} />
+              <Route exact path = '/rooms' component={Rooms} />
+            </Switch>
+         </div>
+    </Router>
+   
   );
 }
 
