@@ -11,6 +11,7 @@ export default function Navigation() {
                <li><Link to='/amenities'>Amenities</Link></li>
                <li><Link to='/rooms'>Rooms</Link></li>
                <li><Link to='/reviews'>Guest Review</Link></li>
+               <li><Link to='/manageReservation'>Manage Reservation</Link></li> 
            </ul> 
         </div>
     )
