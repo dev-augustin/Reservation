@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input, Lable, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import '../styles/MakeReservation.css'
 
 
 export default class EditReservation extends Component {
@@ -112,7 +113,7 @@ postAPI = async (formData) =>{
        return(
         <React.Fragment>
 
-<form onSubmit={this.onSubmit} style={{marginTop:'100px'}} >
+<form className="form-div" onSubmit={this.onSubmit} style={{marginTop:'100px'}} >
                    <label>
                        First Name:  </label>
                        <input type="text" name="FirstName" value={this.state.FirstName} onChange={this.onChange}></input>            
