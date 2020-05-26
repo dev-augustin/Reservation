@@ -1,0 +1,41 @@
+.home-container{
+  display: flex;
+}
+
+#view-room-button{
+
+    font-family: cursive;
+    background-color:lightgoldenrodyellow;
+    font-size: medium;
+}
+
+.home-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+
+}
+
+/* #welcome-header{
+    font-family: cursive;
+    color: rgb(220, 223, 46);
+    z-index: 1;
+    margin-left: -1000px;
+    margin-bottom: -500px;
+} */
+
+
+#welcome-header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: max-content;
+        height: max-content;
+        font-family: cursive;
+        color: lightgoldenrodyellow
+        
+    }

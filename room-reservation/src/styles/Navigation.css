@@ -1,3 +1,30 @@
+
+.route-container{
+    display: flex;
+    flex-direction: column;
+}
 .route-navBar{
-    list-style: none;
+
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 4;
+    font-family: cursive;
+    /* width: 100%; */
+    margin-top: 0px;
+}
+
+li a {
+    text-decoration: none;
+    justify-content: space-evenly;
+}
+
+#hotel-name{
+    color: blueviolet;
+    font-family: cursive;
+    margin-top: 0px;
+    margin-left: 0px;
+    /* border: 1px solid grey; */
 }
