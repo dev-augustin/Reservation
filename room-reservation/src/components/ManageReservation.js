@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Button, ButtonGroup, Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/ManageReservation.css'
 
 
 export default class ManageReservation extends Component {
@@ -61,18 +63,60 @@ export default class ManageReservation extends Component {
    render(){
     const {reserve} = this.state; 
        return(
-        <div>
-            {this.state.reserve.map((res) => <ul><li>{res.firstName}</li>
+        <div className="manage-container">           
+            <Table  striped bordered hover size="sm" style={{backgroundColor: 'lightgray'}}>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Room Type</th>
+                        <th>No.of Adults</th>
+                        <th>No.of Children</th>
+                        <th>ArrivalDate</th>
+                        <th>DepartureDate</th>
+                        <th>Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {this.state.reserve.map((res) => 
+                    <tr key={res.id}>
+                    <td>{res.firstName}</td>
+                    <td>{res.lastName}</td>
+                    <td>{res.email}</td>
+                    <td>{res.phone}</td>
+                    <td>{res.roomPreference}</td>
+                    <td>{res.noOfAdults}</td>
+                    <td>{res.noOfChildren}</td>
+                    <td>{res.arrivalDate}</td>
+                    <td>{res.departureDate}</td>
+                    <td>{res.questions}</td>
+                    <td> <Link to={"/editReservation/" + res.id}> <Button>Edit</Button></Link></td>
+                    <td>    
+                    <Button onClick={() => this.remove(res.id)}> Delete</Button></td>
+                    </tr>  )}
+                </tbody>
+            </Table>
+          
+            
+        
+            
+       
+            {/* {this.state.reserve.map((res) => <ul><li>{res.firstName}</li>
             <li>{res.lastName} </li>
             <li>{res.id} </li>
             
             <Button><Link to={"/editReservation/" + res.id}> EditSe</Link> /</Button>
-            {/* <Button
-            onClick={() => this.edit(res.id)} >Edit User</Button> */}
+  
             
-            <Button onClick={() => this.remove(res.id)}> Delete</Button></ul>)}
+            <Button onClick={() => this.remove(res.id)}> Delete</Button></ul>)} */}
 
         </div>
        );   
    }
 }
+
+
+          {/* <Button
+            onClick={() => this.edit(res.id)} >Edit User</Button> */}

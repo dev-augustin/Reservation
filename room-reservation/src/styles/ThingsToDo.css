@@ -1,0 +1,43 @@
+
+
+.explore-main-container{
+    display: flex;
+   
+    flex-direction: column;
+    /* background-color: gainsboro; */
+  
+}
+
+.first-item{
+    margin: 40px;
+    border: 1px solid grey;
+    font-style: cursive;
+}
+.second-item{
+    margin: 40px;
+    border: 1px solid grey;
+}
+
+.attractions{
+    margin-Top: 20px;
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: cursive;
+}
+
+h1{
+    margin-Top: 20px;
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: cursive;
+    color: gray;
+}
+
+.restaurants{
+    margin-Top: 20px;
+    padding: 5px;
+    /* display: flex;
+    flex-direction: column; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: cursive;
+}

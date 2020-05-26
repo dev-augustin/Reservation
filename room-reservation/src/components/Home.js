@@ -8,8 +8,8 @@ export default function Home() {
     return (
         <div className="home-container">
             <img src = {homeImg} alt="home page" className="home-image" />
-            <h1 id="welcome-header">Best Value under the Sun <br/>
-            <Link to='/rooms'> <Button variant="primary" id="view-room-button"> View our Rooms</Button></Link></h1>
+            <h1 id="welcome-header"><br/>
+            <Link to='/rooms'> <Button variant="outline-info" id="view-room-button"> Welcome to Rainbow Inn</Button></Link></h1>
             
         </div>
     )

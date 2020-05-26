@@ -5,8 +5,10 @@
 #view-room-button{
 
     font-family: cursive;
-    background-color:lightgoldenrodyellow;
-    font-size: medium;
+    /* background-color:lightgoldenrodyellow; */
+    font-weight: bold;
+    font-size: large;
+    color: gray;
 }
 
 .home-image{
@@ -26,16 +28,18 @@
 } */
 
 
-#welcome-header {
+/* #welcome-header {
         position: absolute;
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;
+        bottom: -250px;
         margin: auto;
         width: max-content;
         height: max-content;
         font-family: cursive;
-        color: lightgoldenrodyellow
+        color: rgb(153, 49, 49);
+        font-weight: bold;
+        font-size: 25px;
         
-    }
+    } */

@@ -2,6 +2,7 @@
 .route-container{
     display: flex;
     flex-direction: column;
+    /* background-color: rgb(236, 236, 109); */
 }
 .route-navBar{
 
@@ -11,20 +12,31 @@
     justify-content: space-around;
     align-items: center;
     flex-grow: 4;
-    font-family: cursive;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: cursive;
+    font-size: larger;
     /* width: 100%; */
     margin-top: 0px;
+    /* color: black; */
 }
+
+
+.nav-color {
+    background-color: #45dbcf;
+}
+/* 
 
 li a {
     text-decoration: none;
     justify-content: space-evenly;
-}
+    color: rgb(32, 24, 24);
+} */
 
 #hotel-name{
-    color: blueviolet;
+    /* color: blueviolet; */
     font-family: cursive;
     margin-top: 0px;
     margin-left: 0px;
+    font-weight: bold;
     /* border: 1px solid grey; */
 }

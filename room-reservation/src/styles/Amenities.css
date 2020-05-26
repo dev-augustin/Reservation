@@ -1,0 +1,9 @@
+.amenities-main-div{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: cursive;
+    margin:100px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+
+}

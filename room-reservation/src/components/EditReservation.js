@@ -39,7 +39,7 @@ export default class EditReservation extends Component {
                 RoomType: response.data.roomPreference,
                 ArrivalDate: response.data.arrivalDate,
                 Questions: response.data.questions,
-                DepartureDate: response.departureDate,
+                DepartureDate: response.data.departureDate,
 
             })
         }
@@ -83,7 +83,7 @@ onSubmit=(event) =>{
         noOfAdults : this.state.Adults,
         noOfChildren : this.state.Kids,
         arrivalDate : this.state.ArrivalDate,
-        departureDate : this.state.DeparatureDate,
+        departureDate : this.state.DepartureDate,
         questions : this.state.Questions
     };
     this.postAPI(formData);
@@ -112,7 +112,7 @@ postAPI = async (formData) =>{
        return(
         <React.Fragment>
 
-<form onSubmit={this.onSubmit} >
+<form onSubmit={this.onSubmit} style={{marginTop:'100px'}} >
                    <label>
                        First Name:  </label>
                        <input type="text" name="FirstName" value={this.state.FirstName} onChange={this.onChange}></input>            
@@ -147,7 +147,7 @@ postAPI = async (formData) =>{
                     <br/>
                     <label>
                         Deparature Date:  </label>
-                        <input type="text" name="DeparatureDate" value={this.state.DeparatureDate} onChange={this.onChange} />
+                        <input type="text" name="DeparatureDate" value={this.state.DepartureDate} onChange={this.onChange} />
                     <br/>
                     <label>
                         Questions/Concerns:  </label>
@@ -158,7 +158,7 @@ postAPI = async (formData) =>{
                     </label>  
                     </form>
 
-                    <Button><Link to="/manageReservation"> clik</Link> /</Button>
+                    {/* <Button><Link to="/manageReservation"> clik</Link> /</Button> */}
 
            
   </React.Fragment>

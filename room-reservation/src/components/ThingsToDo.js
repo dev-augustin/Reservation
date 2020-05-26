@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../styles/ThingsToDo.css'
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -60,7 +61,7 @@ export default class ThingsToDo extends Component {
     
             console.log(restau.data.data)
             let x=restau.data.data;
-          
+            console.log(x[0].photo);
            console.log(x[0].photo.images.medium.url); 
            console.log(x[0].cuisine[0].name); 
       
@@ -79,18 +80,30 @@ export default class ThingsToDo extends Component {
           console.log(this.state.restaurants)
 
         return (
-            <div>
+         <React.Fragment>
 
-<div style={{backgroundColor:'yellow'}}>{this.state.restaurants.map((reser) => <ul>
+           <h1 id="explore-header">Explore nearby restaurants and attractions in Dallas</h1>
+       
+            <div className="explore-main-container">
+
+        <div className="first-item">{this.state.restaurants.map((res) => <div className="restaurants">
     {/* <li>
-        <img src={reser.photo.images.medium.url} /> </li> */}
+        <img src={res.large.url} /> </li> */}
 {/* <li>{res.photo}</li> */}
-    <li>{reser.address}</li><li>{reser.name}</li><li>{reser.description}
-        </li></ul>)}</div>
-{this.state.results.map((res) => <ul><li>
-        <img src={res.photo.images.medium.url} /> </li><li>{res.address}</li><li>{res.name}</li><li>{res.description}
-        </li></ul>)}
+<h4>{res.name}</h4>
+<p>{res.address}</p><p>{res.description}</p>
+      </div>)}</div>
+
+        <div className="second-item">
+
+       {this.state.results.map((res) =><div className="attractions"> 
+        <img src={res.photo.images.medium.url} alt="attraction"/> <h4>{res.name}</h4> <p>{res.address}</p><p>{res.description}</p>
+        </div>)}
+        </div>
+
+
 </div>
+</React.Fragment>
         )
     }
 }

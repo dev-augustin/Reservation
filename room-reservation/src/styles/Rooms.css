@@ -1,0 +1,117 @@
+/* .room-main-container{
+   display: flex;
+} */
+
+/* .room-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 100px;
+
+ } */
+
+ /* ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+ 
+}
+
+.results-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+    padding: 100px;
+
+}
+
+h5{
+    margin: 0cm;
+    text-align: center;
+    color: grey;
+    font-size: medium;
+}
+
+.results-li{
+    border: 2px solid grey;
+    padding: 10px;
+    margin-bottom: 70px;
+   
+}
+
+.search-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+}
+
+#search-text{
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: lighter;
+    width:500px;
+    border-radius: 10px;
+    color:rgb(52, 47, 128);
+    border:1px solid grey;
+    
+} */
+/* 
+#search-button{
+
+    font-size: medium;
+    font-family: cursive;
+    font-weight: bold;
+    width:100px;
+    border-radius: 10px;
+    border:1px solid grey;
+    background-color: cadetblue;
+    color:rgb(52, 47, 128);
+    margin-left: 50px;
+}
+
+#view-details{
+    font-size: medium;
+    font-family: cursive;
+    font-weight: bold;
+    width:100px;
+    border-radius: 10px;
+    color:rgb(52, 47, 128);
+    margin-left: 80px;
+} */
+.carousel {
+    width:900px;
+    height:500px;
+    margin: auto;
+  }
+  
+.carousel-container{
+    padding: 0px;
+    background-color: black;
+}
+.carousel-item{
+    padding: 0px;
+    height: 600px;
+    width: 80%;
+    align-content: center;
+    /* width: 600px; */
+    /* background-color: grey; */
+}
+
+.carousel-caption{
+    font-size: medium;
+    font-family: cursive;
+    font-weight: bold;
+    font-variant: small-caps;
+    margin-left: 140px;
+}

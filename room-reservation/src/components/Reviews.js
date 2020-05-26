@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Button, ButtonGroup, Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/Review.css'
 
 export default class Reviews extends Component {
     constructor(props) {
@@ -11,8 +14,7 @@ export default class Reviews extends Component {
             Rating: "",
             reserve:[]
         }
-        // this.onChange=this.onChange.bind(this);
-        // this.onSubmit=this.onSubmit.bind(this)
+      
     }
 
     async componentDidMount() {
@@ -54,6 +56,7 @@ postAPI = async (formData) =>{
            
             );
             console.log(response.data);
+            // this.props.history.push('/reviews/');
             // this.setState({reserve: response.data, isLoading: false})
         }
 
@@ -65,30 +68,42 @@ postAPI = async (formData) =>{
     // const {reserve} = this.state;
        return(
         <React.Fragment>
-
+<div className="form-div-review">
 <form onSubmit={this.onSubmit} >
 <label>
 Review </label>
-                       <input type="text" name="Review" value={this.state.Review} onChange={this.onChange}></input>            
+                    <input style={{height: '100px', marginTop: '15px'}}  type="text" name="Review" value={this.state.Review} onChange={this.onChange}/>            
                     <br/>
                     <label>
                     Rating </label>
-                       <input type="text" name="Rating" value={this.state.Rating} onChange={this.onChange}></input>            
+                    <input type="text" name="Rating" value={this.state.Rating} onChange={this.onChange} placeholder="on scale of 1-5"/>            
                     <br/>
                     
-                    <label>
+                    <label >
                         <input type="submit" value="Submit" />
                     </label>  
                     </form>
-                    <div>
-                        {this.state.reserve.map((res) => <ul><li>
-                            {res.review}</li>
-                            <li>
-                                {res.rating}</li></ul>)}
+                   
+                      
                     </div>
                     {/* <Button><Link to="/manageReservation"> clik</Link> /</Button> */}
-
-           
+                    <div className="review-container">           
+            <Table  striped bordered hover size="sm" >
+                <thead style={{backgroundColor: 'lightgray'}}>
+                    <tr>
+                        <th>Review</th>
+                        <th>Rating</th>
+                    </tr>
+                    </thead>
+                    <tbody>  {this.state.reserve.map((res) => <tr key={res.id}><td>
+                        {res.review} </td>
+                        <td>{res.rating}</td>
+                        </tr>
+                               )}
+                                </tbody>
+                  
+            </Table>
+                    </div>
   </React.Fragment>
         )
     }

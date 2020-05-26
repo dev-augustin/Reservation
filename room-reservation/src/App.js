@@ -10,6 +10,7 @@ import Reviews from './components/Reviews'
 import Rooms from './components/Rooms'
 import Amenities from './components/Amenities'
 import ThingsToDo from './components/ThingsToDo'
+import AboutUsContact from './components/AboutUsContact'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route exact path = '/thingsToDo' component={ThingsToDo} />
               {/* <Route exact path = '/search' component={Search} /> */}
               <Route  path = '/editReservation/:id' component={EditReservation} />
+              <Route exact path = '/about' component={AboutUsContact} />
             </Switch>
          </div>
     </Router>
