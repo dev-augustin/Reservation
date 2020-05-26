@@ -33,7 +33,7 @@ public class RoomListController {
 	  @Autowired
 	  private  RoomListRepository roomListRepository;
 	  
-	//  get all reviews
+	//  get all rooms
 	  
 
 	  @GetMapping("/room_list")
@@ -44,57 +44,57 @@ public class RoomListController {
 	}
 	  
 	  
-	//  get all reviews by id
+	//  get all rooms by id
 
 	  @GetMapping("/room_list/{id}")
-	  public ResponseEntity<RoomList> getEmployeeById(@PathVariable(value = "id") Long employeeId)
+	  public ResponseEntity<RoomList> getRoomById(@PathVariable(value = "id") Long roomId)
 	      throws ResourceNotFoundException {
-		  RoomList employee = roomListRepository.findById(employeeId)
-	        .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-	      return ResponseEntity.ok().body(employee);
+		  RoomList room = roomListRepository.findById(roomId)
+	        .orElseThrow(() -> new ResourceNotFoundException("Room not found for this id :: " + roomId));
+	      return ResponseEntity.ok().body(room);
 	  }
 	  
-	//  save reviews
+	//  save Rooms
 	  
 	  @PostMapping("/room_list")
-	  public RoomList createEmployee(@Valid @RequestBody  RoomList employee) {
-		  return roomListRepository.save(employee);
+	  public RoomList createRoom(@Valid @RequestBody  RoomList room) {
+		  return roomListRepository.save(room);
 	  }
 	  
-	//  Update Employee
+	//  Update Rooms
 	  
 	  @PutMapping("/room_list/{id}")
-	  public ResponseEntity<RoomList> updateEmployee(@PathVariable(value = "id") Long employeeId,
-			  @Valid @RequestBody RoomList employeeDetails)
+	  public ResponseEntity<RoomList> updateEmployee(@PathVariable(value = "id") Long roomId,
+			  @Valid @RequestBody RoomList roomDetails)
 		      throws ResourceNotFoundException {
-		  RoomList employee = roomListRepository.findById(employeeId)
-		    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+		  RoomList room = roomListRepository.findById(roomId)
+		    		  .orElseThrow(()-> new ResourceNotFoundException("Room not found for this id :: " + roomId));
 		      
 		     
-		     employee.setRoomType(employeeDetails.getRoomType()); 
-		     employee.setPrice(employeeDetails.getPrice());
-		     employee.setAmenities(employeeDetails.getAmenities());
-		     employee.setRoomImage(employeeDetails.getRoomImage()); 	    
+		  room.setRoomType(roomDetails.getRoomType()); 
+		  room.setPrice(roomDetails.getPrice());
+		  room.setAmenities(roomDetails.getAmenities());
+		  room.setRoomImage(roomDetails.getRoomImage()); 	    
 		     
-		     final RoomList updatedEmployee = roomListRepository.save(employee);
+		     final RoomList updatedEmployee = roomListRepository.save(room);
 		     
 		     
 		     return ResponseEntity.ok(updatedEmployee);
 		      
 		      }
 	  
-	//  Delete Employee
+	//  Delete room
 	  
 	  @DeleteMapping("/room_list/{id}")
-	  public Map<String, Boolean> deletedEmployee(@PathVariable(value = "id") Long employeeId)
+	  public Map<String, Boolean> deletedRoom(@PathVariable(value = "id") Long roomId)
 				      throws ResourceNotFoundException {
-		  RoomList employee = roomListRepository.findById(employeeId)
-				    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+		  RoomList room = roomListRepository.findById(roomId)
+				    		  .orElseThrow(()-> new ResourceNotFoundException("Room not found for this id :: " + roomId));
 	  
-		  			  roomListRepository.delete(employee);
+		  			  roomListRepository.delete(room);
 				      Map<String, Boolean> response = new HashMap<>();
 				      
-				      response.put("deleted employee", Boolean.TRUE);
+				      response.put("deleted room", Boolean.TRUE);
 				      
 				      return response;
 	  

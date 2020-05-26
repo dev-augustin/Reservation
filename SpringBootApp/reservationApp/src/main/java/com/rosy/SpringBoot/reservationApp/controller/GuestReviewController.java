@@ -34,7 +34,7 @@ public class GuestReviewController {
 	  
 
 	  @GetMapping("/reviews")
-	  public List<GuestReviews> getAllEmployees(Model model) {
+	  public List<GuestReviews> getAllReviews(Model model) {
 	  	
 	  return this.guestReviewRepository.findAll();
 	  
@@ -44,53 +44,52 @@ public class GuestReviewController {
 	//  get all reviews by id
 
 	  @GetMapping("/reviews/{id}")
-	  public ResponseEntity<GuestReviews> getEmployeeById(@PathVariable(value = "id") Long employeeId)
+	  public ResponseEntity<GuestReviews> getReviewById(@PathVariable(value = "id") Long reviewId)
 	      throws ResourceNotFoundException {
-		  GuestReviews employee = guestReviewRepository.findById(employeeId)
-	        .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-	      return ResponseEntity.ok().body(employee);
+		  GuestReviews review = guestReviewRepository.findById(reviewId)
+	        .orElseThrow(() -> new ResourceNotFoundException("Review not found for this id :: " + reviewId));
+	      return ResponseEntity.ok().body(review);
 	  }
 	  
 	//  save reviews
 	  
 	  @PostMapping("/reviews")
-	  public GuestReviews createEmployee(@Valid @RequestBody GuestReviews employee) {
-		  return guestReviewRepository.save(employee);
+	  public GuestReviews createReview(@Valid @RequestBody GuestReviews review) {
+		  return guestReviewRepository.save(review);
 	  }
 	  
-	//  Update Employee
+	//  Update Review
 	  
 		  @PutMapping("/reviews/{id}")
-		  public ResponseEntity<GuestReviews> updateEmployee(@PathVariable(value = "id") Long employeeId,
-				  @Valid @RequestBody GuestReviews employeeDetails)
+		  public ResponseEntity<GuestReviews> updateReview(@PathVariable(value = "id") Long reviewId,
+				  @Valid @RequestBody GuestReviews reviewDetails)
 			      throws ResourceNotFoundException {
-			  GuestReviews employee = guestReviewRepository.findById(employeeId)
-			    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+			  GuestReviews review = guestReviewRepository.findById(reviewId)
+			    		  .orElseThrow(()-> new ResourceNotFoundException("Review not found for this id :: " + reviewId));
 			      
-			     
-			     employee.setReview(employeeDetails.getReview()); 
-			     employee.setRating(employeeDetails.getRating());
+			  review.setReview(reviewDetails.getReview()); 
+			  review.setRating(reviewDetails.getRating());
 			    	    
 			     
-			     final GuestReviews updatedEmployee = guestReviewRepository.save(employee);
+			     final GuestReviews updatedReview = guestReviewRepository.save(review);
 			     
 			     
-			     return ResponseEntity.ok(updatedEmployee);
+			     return ResponseEntity.ok(updatedReview);
 			      
 			      }
 		  
-		//  Delete Employee
+		//  Delete Review
 		  
 		  @DeleteMapping("/reviews/{id}")
-		  public Map<String, Boolean> deletedEmployee(@PathVariable(value = "id") Long employeeId)
+		  public Map<String, Boolean> deletedEmployee(@PathVariable(value = "id") Long reviewId)
 					      throws ResourceNotFoundException {
-			  GuestReviews employee = guestReviewRepository.findById(employeeId)
-					    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+			  GuestReviews review = guestReviewRepository.findById(reviewId)
+					    		  .orElseThrow(()-> new ResourceNotFoundException("Review not found for this id :: " + reviewId));
 		  
-			              guestReviewRepository.delete(employee);
+			              guestReviewRepository.delete(review);
 					      Map<String, Boolean> response = new HashMap<>();
 					      
-					      response.put("deleted employee", Boolean.TRUE);
+					      response.put("deleted review", Boolean.TRUE);
 					      
 					      return response;
 		  

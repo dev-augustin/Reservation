@@ -33,7 +33,7 @@ public class RoomReservationController {
   private RoomReservationRepository reservationRepository;
 
     
-//  get all employees
+//  get all reserved rooms
   
 
   @GetMapping("/reserve")
@@ -45,63 +45,64 @@ public class RoomReservationController {
 
 
     
-//  get all employees by id
+//  get all reserved rooms by id
 
   @GetMapping("/reserve/{id}")
-  public ResponseEntity<RoomReservation> getEmployeeById(@PathVariable(value = "id") Long employeeId)
+  public ResponseEntity<RoomReservation> getEmployeeById(@PathVariable(value = "id") Long reservedRoomId)
       throws ResourceNotFoundException {
-	  RoomReservation employee = reservationRepository.findById(employeeId)
-        .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-      return ResponseEntity.ok().body(employee);
+	  RoomReservation reserveRoom = reservationRepository.findById(reservedRoomId)
+        .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + reservedRoomId));
+      return ResponseEntity.ok().body(reserveRoom);
   }
   
-//  save employee
+//  save reserved rooms
   
   @PostMapping("/reserve")
-  public RoomReservation createEmployee(@Valid @RequestBody RoomReservation employee) {
-	  return reservationRepository.save(employee);
+  public RoomReservation createReservation(@Valid @RequestBody RoomReservation reserveRoom) {
+	  return reservationRepository.save(reserveRoom);
   }
   
-//  Update Employee
+//  Update reserved rooms
   
   @PutMapping("/reserve/{id}")
-  public ResponseEntity<RoomReservation> updateEmployee(@PathVariable(value = "id") Long employeeId,
-		  @Valid @RequestBody RoomReservation employeeDetails)
+  public ResponseEntity<RoomReservation> updateReservation(@PathVariable(value = "id") Long reservedRoomId,
+		  @Valid @RequestBody RoomReservation reservedRoomDetails)
 	      throws ResourceNotFoundException {
-	  RoomReservation employee = reservationRepository.findById(employeeId)
-	    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+	  RoomReservation reserveRoom = reservationRepository.findById(reservedRoomId)
+	    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + reservedRoomId));
 	      
 	     
-	     employee.setEmail(employeeDetails.getEmail()); 
-	     employee.setfirstName(employeeDetails.getfirstName());
-	     employee.setlastName(employeeDetails.getlastName());
-	     employee.setPhone(employeeDetails.getPhone()); 
-	     employee.setArrivalDate(employeeDetails.getArrivalDate());
-	     employee.setDepartureDate(employeeDetails.getDepartureDate());
-	     employee.setNoOfAdults(employeeDetails.getNoOfAdults()); 
-	     employee.setNoOfChildren(employeeDetails.getNoOfChildren()); 
-	     employee.setQuestions(employeeDetails.getQuestions()); 
+	  reserveRoom.setEmail(reservedRoomDetails.getEmail()); 
+	  reserveRoom.setfirstName(reservedRoomDetails.getfirstName());
+	  reserveRoom.setlastName(reservedRoomDetails.getlastName());
+	  reserveRoom.setPhone(reservedRoomDetails.getPhone()); 
+	  reserveRoom.setArrivalDate(reservedRoomDetails.getArrivalDate());
+	  reserveRoom.setDepartureDate(reservedRoomDetails.getDepartureDate());
+	  reserveRoom.setNoOfAdults(reservedRoomDetails.getNoOfAdults()); 
+	  reserveRoom.setNoOfChildren(reservedRoomDetails.getNoOfChildren()); 
+	  reserveRoom.setQuestions(reservedRoomDetails.getQuestions()); 
+	  reserveRoom.setRoomPreference(reservedRoomDetails.getRoomPreference());
 	     
 	     
-	     final RoomReservation updatedEmployee = reservationRepository.save(employee);
+	     final RoomReservation updatedEmployee = reservationRepository.save(reserveRoom);
 	     
 	     
 	     return ResponseEntity.ok(updatedEmployee);
 	      
 	      }
   
-//  Delete Employee
+//  Delete reserved rooms
   
   @DeleteMapping("/reserve/{id}")
-  public Map<String, Boolean> deletedEmployee(@PathVariable(value = "id") Long employeeId)
+  public Map<String, Boolean> deletedEmployee(@PathVariable(value = "id") Long reservedRoomId)
 			      throws ResourceNotFoundException {
-	  RoomReservation employee = reservationRepository.findById(employeeId)
-			    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+	  RoomReservation employee = reservationRepository.findById(reservedRoomId)
+			    		  .orElseThrow(()-> new ResourceNotFoundException("Employee not found for this id :: " + reservedRoomId));
   
 			      reservationRepository.delete(employee);
 			      Map<String, Boolean> response = new HashMap<>();
 			      
-			      response.put("deleted employee", Boolean.TRUE);
+			      response.put("deleted reserved room", Boolean.TRUE);
 			      
 			      return response;
   
