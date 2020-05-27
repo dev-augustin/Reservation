@@ -1,5 +1,5 @@
 ## Hotel  - Room Reservation App
-## Link: hotel-reservation.surge.sh
+## Link: http://hotel-reservation.surge.sh/
 
 ## Technologies Used:
 ReactJS, Springboot JPA, PostgreSql
