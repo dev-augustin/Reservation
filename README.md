@@ -1,4 +1,5 @@
 ## Hotel  - Room Reservation App
+## Link: hotel-reservation.surge.sh
 
 ## Technologies Used:
 ReactJS, Springboot JPA, PostgreSql
@@ -26,9 +27,6 @@ Add authentication functionality.
 
 ## Wireframe:
 ![WireFrame](./room-reservation/wireframe/RoomReservationWireframe.png)
-
-## Link:
-
 
 ## Resources:
 1. https://react-bootstrap.github.io/components/forms/
