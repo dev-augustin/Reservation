@@ -1,5 +1,5 @@
 ## Hotel  - Room Reservation App
-#### Link: https://springboot-hotel-react.herokuapp.com/rooms
+#### Link: https://springboot-hotel-react.herokuapp.com/
           
 ## Technologies Used:
 ReactJS, Springboot JPA, PostgreSql
