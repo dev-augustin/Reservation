@@ -1,5 +1,5 @@
 ## Hotel  - Room Reservation App
-#### Link: http://hotel-reservation.surge.sh/  https://springboot-hotel.herokuapp.com//rosy_api/v1/reviews
+#### Link: https://springboot-hotel-react.herokuapp.com/rooms
           
 ## Technologies Used:
 ReactJS, Springboot JPA, PostgreSql
