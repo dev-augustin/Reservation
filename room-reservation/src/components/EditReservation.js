@@ -50,20 +50,7 @@ export default class EditReservation extends Component {
         }
     }
 
-//   loadUser() {
-//     ApiService.fetchUserById(window.localStorage.getItem("userId"))
-//         .then((res) => {
-//             let user = res.data.result;
-//             this.setState({
-//             id: user.id,
-//             username: user.username,
-//             firstName: user.firstName,
-//             lastName: user.lastName,
-//             age: user.age,
-//             salary: user.salary,
-//             })
-//         });
-// }
+
   onChange = (event) =>{
     event.preventDefault();
     console.log("Onchange", event.target.value)
@@ -97,7 +84,7 @@ postAPI = async (formData) =>{
            
             );
             console.log(response.data);
-            // this.setState({reserve: response.data, isLoading: false})
+          
             this.props.history.push('/manageReservation/');
         }
 
@@ -105,10 +92,10 @@ postAPI = async (formData) =>{
             console.log("Error", e)
         }
 
-        // this.props.history.push('/manageReservation/');
+       
     }
    render(){
-    // const {reserve} = this.state;
+ 
     console.log(this.state.id)
        return(
         <React.Fragment>
@@ -159,7 +146,6 @@ postAPI = async (formData) =>{
                     </label>  
                     </form>
 
-                    {/* <Button><Link to="/manageReservation"> clik</Link> /</Button> */}
 
            
   </React.Fragment>
