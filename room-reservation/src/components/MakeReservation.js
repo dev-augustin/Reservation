@@ -56,7 +56,7 @@ postAPI = async (formData) =>{
            
             );
             console.log(response.data);
-            this.setState({reserve: response.data, isLoading: false}) 
+            this.setState({reserve: response.data}) 
             this.props.history.push('/manageReservation/');
         }
 
@@ -64,7 +64,6 @@ postAPI = async (formData) =>{
             console.log("Error", e)
         }
 
-       // this.props.history.push('/manageReservation/');
     }
    render(){
     // const {reserve} = this.state;
@@ -73,19 +72,6 @@ postAPI = async (formData) =>{
 
   <div className="form-div">
 
-  {/* <Form>
-  <Form.Row>
-    <Form.Group controlId="formBasicEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-    </Form.Group>
-
-    <Form.Group as={Col} controlId="formGridPassword">
-      <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
-  </Form.Row>
-  </Form> */}
   <form onSubmit={this.onSubmit} >
                    <label style={{ marginTop: '40px'}} >
                        First Name:  </label> 
@@ -134,9 +120,7 @@ postAPI = async (formData) =>{
 
                     <p style={{fontFamily: 'cursive'}}>(You have 24hrs before your arrival date to confirm your Reservation. Our reservation agent will contact within 1 hr)</p>
 
-                    {/* <Link to="/manageReservation"> Go to Manage you Reservation</Link>  */}
-
-           
+                          
   </div>
   </React.Fragment>
            
