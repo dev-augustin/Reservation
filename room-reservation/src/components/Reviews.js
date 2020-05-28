@@ -22,7 +22,7 @@ export default class Reviews extends Component {
         try{
                 const response = await axios.get("/rosy_api/v1/reviews");
                 console.log(response.data);
-                this.setState({reserve: response.data, isLoading: false})
+                this.setState({reserve: response.data})
             }
     
         catch(e){
@@ -56,8 +56,7 @@ postAPI = async (formData) =>{
            
             );
             console.log(response.data);
-            // this.props.history.push('/reviews/');
-            // this.setState({reserve: response.data, isLoading: false})
+         
         }
 
     catch(e){
@@ -65,7 +64,7 @@ postAPI = async (formData) =>{
         }
     }
    render(){
-    // const {reserve} = this.state;
+  
        return(
         <React.Fragment>
 <div className="form-div-review">
@@ -86,7 +85,7 @@ Review </label>
                    
                       
                     </div>
-                    {/* <Button><Link to="/manageReservation"> clik</Link> /</Button> */}
+                   
                     <div className="review-container">           
             <Table  striped bordered hover size="sm" >
                 <thead style={{backgroundColor: 'lightgray'}}>
